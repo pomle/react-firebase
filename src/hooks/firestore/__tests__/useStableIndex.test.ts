@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { ResultMap } from '../ResultMap';
+import { ResultMap } from '../CollectionResult';
 import { useStableIndex } from '../useStableIndex';
 
 function createIndex(store: Record<string, unknown>) {

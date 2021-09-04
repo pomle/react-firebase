@@ -4,7 +4,7 @@ import { Entry } from './types';
 import { useStableIndex } from './useStableIndex';
 import { useSubscribers } from './useSubscribers';
 import { useIndex } from './useIndex';
-import { ResultMap } from './ResultMap';
+import { CollectionResult } from './CollectionResult';
 import { useStableIds } from './useStableIds';
 
 function usePath(collection: firestore.CollectionReference) {
@@ -14,7 +14,7 @@ function usePath(collection: firestore.CollectionReference) {
 export function useCollectionResult<T>(
   collection: firestore.CollectionReference<T>,
   unstableIds: string[],
-): ResultMap<Entry<T>> {
+): CollectionResult<Entry<T>> {
   const ids = useStableIds(unstableIds);
 
   const path = usePath(collection);

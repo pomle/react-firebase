@@ -1,6 +1,6 @@
-export class ResultMap<T> extends Map<string, T> {
-  static from<T>(source: Record<string, T>): ResultMap<T> {
-    const me = new ResultMap<T>();
+export class CollectionResult<T> extends Map<string, T> {
+  static from<T>(source: Record<string, T>): CollectionResult<T> {
+    const me = new CollectionResult<T>();
     for (const key of Object.keys(source)) {
       me.set(key, source[key]);
     }

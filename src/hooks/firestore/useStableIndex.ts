@@ -1,20 +1,20 @@
 import { useMemo, useRef } from 'react';
-import { ResultMap } from './ResultMap';
+import { CollectionResult } from './CollectionResult';
 
 export function useStableIndex<T>(
   ids: string[],
   get: (id: string) => T | undefined,
 ) {
-  const initial = useMemo(() => new ResultMap<T>(), []);
+  const initial = useMemo(() => new CollectionResult<T>(), []);
 
-  const cache = useRef<ResultMap<T>>(initial);
+  const cache = useRef<CollectionResult<T>>(initial);
 
   return useMemo(() => {
     if (ids.length === 0) {
       return initial;
     }
 
-    const result = new ResultMap<T>();
+    const result = new CollectionResult<T>();
 
     let updateCache = ids.length !== cache.current.size;
 
