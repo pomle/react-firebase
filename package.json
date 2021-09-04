@@ -1,6 +1,6 @@
 {
   "name": "@pomle/react-firebase",
-  "version": "0.2.0-0",
+  "version": "0.2.0-1",
   "description": "Firebase lib for React",
   "author": "pomle",
   "license": "MIT",
