@@ -1,4 +1,7 @@
-import { useFirebaseStore } from './context/FirebaseStore';
+import {
+  FirebaseStoreContext,
+  useFirebaseStore,
+} from './context/FirebaseStore';
 import { useCollectionResult } from './hooks/firestore/useCollectionResult';
 
-export { useFirebaseStore, useCollectionResult };
+export { FirebaseStoreContext, useFirebaseStore, useCollectionResult };
