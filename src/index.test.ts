@@ -1,11 +1,12 @@
 import * as lib from './index';
 
 describe('index', () => {
-  it('exports useFirebaseStore hook', () => {
+  it('exports expected', () => {
+    expect(lib.FirebaseAuthContext).toBeTruthy();
+    expect(lib.FirebaseStoreContext).toBeTruthy();
     expect(lib.useFirebaseStore).toBeTruthy();
-  });
-
-  it('exports useCollectionResult hook', () => {
+    expect(lib.useFirebaseAuth).toBeTruthy();
+    expect(lib.CollectionResult).toBeTruthy();
     expect(lib.useCollectionResult).toBeTruthy();
   });
 });
