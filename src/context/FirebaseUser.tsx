@@ -7,19 +7,18 @@ import React, {
 } from 'react';
 import firebase from 'firebase';
 
-type FirebaseAuthContextValue = {
+type FirebaseUserContextValue = {
   ready: boolean;
-  auth: firebase.auth.Auth;
   user?: firebase.User;
 };
 
-const Context = createContext<FirebaseAuthContextValue | null>(null);
+const Context = createContext<FirebaseUserContextValue | null>(null);
 
-interface FirebaseAuthContextProps {
+interface FirebaseUserContextProps {
   auth: firebase.auth.Auth;
 }
 
-export const FirebaseAuthContext: React.FC<FirebaseAuthContextProps> = ({
+export const FirebaseUserContext: React.FC<FirebaseUserContextProps> = ({
   auth,
   children,
 }) => {
@@ -41,19 +40,18 @@ export const FirebaseAuthContext: React.FC<FirebaseAuthContextProps> = ({
   const value = useMemo(
     () => ({
       ready,
-      auth,
       user,
     }),
-    [ready, auth, user],
+    [ready, user],
   );
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
 
-export function useFirebaseAuth() {
+export function useFirebaseUser() {
   const session = useContext(Context);
   if (!session) {
-    throw new Error('useFirebaseAuth without FirebaseAuthContext');
+    throw new Error('useFirebaseUser without FirebaseUserContext');
   }
   return session;
 }

@@ -2,13 +2,13 @@ import {
   FirebaseStoreContext,
   useFirebaseStore,
 } from './context/FirebaseStore';
-import { FirebaseAuthContext, useFirebaseAuth } from './context/FirebaseAuth';
+import { FirebaseUserContext, useFirebaseUser } from './context/FirebaseUser';
 import { useCollectionResult } from './hooks/firestore/useCollectionResult';
 import { CollectionResult } from './hooks/firestore/CollectionResult';
 
 export {
-  FirebaseAuthContext,
-  useFirebaseAuth,
+  FirebaseUserContext,
+  useFirebaseUser,
   FirebaseStoreContext,
   useFirebaseStore,
   useCollectionResult,
