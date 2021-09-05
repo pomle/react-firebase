@@ -31,7 +31,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": ">= 16.8.0"
+    "react": ">= 16.8.0",
+    "firebase": "^7.24.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.1.0",
