@@ -15,11 +15,7 @@ type FirebaseStoreContextValue = {
   queue: (id: string, data: unknown) => void;
 };
 
-const Context = createContext<FirebaseStoreContextValue>({
-  store: {},
-  update: () => undefined,
-  queue: () => undefined,
-});
+const Context = createContext<FirebaseStoreContextValue | null>(null);
 
 const EMPTY = {};
 
@@ -62,5 +58,9 @@ export const FirebaseStoreContext: React.FC = ({ children }) => {
 };
 
 export function useFirebaseStore() {
-  return useContext(Context);
+  const context = useContext(Context);
+  if (context === null) {
+    throw new Error('useFirebaseStore without FirebaseStoreContext');
+  }
+  return context;
 }
