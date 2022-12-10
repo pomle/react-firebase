@@ -30,11 +30,15 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
+  "dependencies": {
+    "@pomle/react-flat-store": "0.3.0"
+  },
   "peerDependencies": {
-    "react": ">= 16.8.0",
-    "firebase": "^7.24.0"
+    "firebase": "^7.24.0",
+    "react": ">= 16.8.0"
   },
   "devDependencies": {
+    "@pomle/react-flat-store": "0.3.0",
     "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

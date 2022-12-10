@@ -7,7 +7,7 @@ import { useIndex } from './useIndex';
 import { CollectionResult } from './CollectionResult';
 import { useStableIds } from './useStableIds';
 
-function usePath(collection: firestore.CollectionReference) {
+function usePath(collection: firestore.CollectionReference<unknown>) {
   return useCallback((id: string) => `${collection.path}/${id}`, [collection]);
 }
 
