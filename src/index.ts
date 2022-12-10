@@ -1,16 +1,8 @@
-import {
+export {
   FirebaseStoreContext,
   useFirebaseStore,
 } from './context/FirebaseStore';
-import { FirebaseUserContext, useFirebaseUser } from './context/FirebaseUser';
-import { useCollectionResult } from './hooks/firestore/useCollectionResult';
-import { CollectionResult } from './hooks/firestore/CollectionResult';
-
-export {
-  FirebaseUserContext,
-  useFirebaseUser,
-  FirebaseStoreContext,
-  useFirebaseStore,
-  useCollectionResult,
-  CollectionResult,
-};
+export { FirebaseUserContext, useFirebaseUser } from './context/FirebaseUser';
+export { useCollectionResult } from './hooks/firestore/useCollectionResult';
+export { CollectionResult } from './hooks/firestore/CollectionResult';
+export type { Entry } from "./hooks/firestore/types" ;
